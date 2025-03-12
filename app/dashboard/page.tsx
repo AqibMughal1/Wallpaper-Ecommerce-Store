@@ -21,7 +21,7 @@ export default function DashboardPage() {
           <CardContent>
             <div className="aspect-square overflow-hidden rounded-md">
               <img
-                src="/placeholder.svg?height=300&width=300"
+                src="/phone.jpg?height=300&width=300"
                 alt="Mobile Wallpaper"
                 className="h-full w-full object-cover"
               />
@@ -45,7 +45,7 @@ export default function DashboardPage() {
           <CardContent>
             <div className="aspect-square overflow-hidden rounded-md">
               <img
-                src="/placeholder.svg?height=300&width=300"
+                src="/images-2.jpeg?height=300&width=300"
                 alt="Tablet Wallpaper"
                 className="h-full w-full object-cover"
               />
@@ -69,7 +69,7 @@ export default function DashboardPage() {
           <CardContent>
             <div className="aspect-square overflow-hidden rounded-md">
               <img
-                src="/placeholder.svg?height=300&width=300"
+                src="/pc.webp?height=300&width=300"
                 alt="PC Wallpaper"
                 className="h-full w-full object-cover"
               />
