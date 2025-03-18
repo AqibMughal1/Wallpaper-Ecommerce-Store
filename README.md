@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+```markdown
+# Wallpaper Ecommerce Store
 
-First, run the development server:
+## Setup Instructions
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Prerequisites
+Ensure you have the following installed on your system:
+- **pnpm** (Package Manager)
+- **Node.js**
+- **Git**
+
+### Installation on macOS / Linux
+Run the following command to install **pnpm**, **Node.js**, and **Git**:
+```sh
+brew install pnpm node git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation on Windows
+If you are using **Windows**, you can install these packages using **Scoop**:
+1. Install **Scoop** (if not already installed):
+   ```powershell
+   iwr -useb get.scoop.sh | iex
+   ```
+2. Install the required packages:
+   ```powershell
+   scoop install pnpm node git
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Navigate to the project directory:**
+   ```sh
+   cd Wallpaper-Ecommerce-Store
+   ```
+2. **Install project dependencies:**
+   ```sh
+   pnpm i
+   ```
+3. **Install Prisma CLI as a dev dependency:**
+   ```sh
+   pnpm add -D prisma
+   ```
+4. **Install Prisma Client:**
+   ```sh
+   pnpm add @prisma/client
+   ```
+5. **Generate Prisma Client:**
+   ```sh
+   pnpm prisma generate
+   ```
+6. **Push schema to the database:**
+   ```sh
+   pnpm prisma db push
+   ```
+7. **Start the development server:**
+   ```sh
+   pnpm run dev
+   ```
 
-## Learn More
+## Notes
+- Ensure your database is set up correctly before running `pnpm prisma db push`.
+- If you encounter any issues, ensure you have the correct environment variables configured in `.env`.
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
+Feel free to fork this repository, make changes, and submit a pull request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
+Happy coding! 🚀
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
