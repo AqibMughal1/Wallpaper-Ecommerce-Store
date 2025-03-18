@@ -6,36 +6,34 @@ import { Button } from "@/components/ui/button"
 
 interface PriceFilterProps {
   minPrice: number
-  maxPrice: number
-  onPriceChange: (min: number, max: number) => void
+  onPriceChange: (min: number) => void
 }
 
-export function PriceFilter({ minPrice, maxPrice, onPriceChange }: PriceFilterProps) {
-  const [priceRange, setPriceRange] = useState<[number, number]>([minPrice, maxPrice])
+export function PriceFilter({ minPrice, onPriceChange }: PriceFilterProps) {
+  const [price, setPrice] = useState<number>(minPrice)
 
-  const handlePriceChange = (values: number[]) => {
-    setPriceRange([values[0], values[1]])
+  const handlePriceChange = (value: number[]) => {
+    setPrice(value[0])
   }
 
   const handleApplyFilter = () => {
-    onPriceChange(priceRange[0], priceRange[1])
+    onPriceChange(price)
   }
 
   return (
     <div className="space-y-4">
       <h3 className="font-medium">Price Range</h3>
       <Slider
-        defaultValue={[minPrice, maxPrice]}
+        defaultValue={[minPrice]}
         min={0}
-        max={100}
+        max={50}
         step={1}
-        value={[priceRange[0], priceRange[1]]}
+        value={[price]}
         onValueChange={handlePriceChange}
         className="py-4"
       />
       <div className="flex items-center justify-between">
-        <span>${priceRange[0]}</span>
-        <span>${priceRange[1]}</span>
+        <span>Up to ${price}</span>
       </div>
       <Button onClick={handleApplyFilter} className="w-full">
         Apply Filter
